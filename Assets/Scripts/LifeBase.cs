@@ -53,7 +53,7 @@ public class LifeBase : MonoBehaviour
     {
         
         transform.DOScale(0, 2.9f).SetEase(Ease.OutBack);
-        yield return new WaitForSecondsRealtime(3.2f);
+        yield return new WaitForSecondsRealtime(2.9f);
         yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);
     }
