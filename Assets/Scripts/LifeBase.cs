@@ -6,12 +6,13 @@ using DG.Tweening;
 public class LifeBase : MonoBehaviour
 {
     private int startLife;
-    public int life;
+    private int life;
     private bool isLife = true;
 
     private void Init()
     {
         startLife = 5;
+        life = startLife;
         isLife = true;
     }
 
@@ -56,6 +57,14 @@ public class LifeBase : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.9f);
         yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);
+    }
+
+
+    public int wLife()
+    {
+        return life;
+
+
     }
 
 
