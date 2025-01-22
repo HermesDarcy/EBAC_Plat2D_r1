@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class LifeBase : MonoBehaviour
 {
+    public flashColor flash;
     private int startLife;
     private int life;
     private bool isLife = true;
@@ -43,7 +44,7 @@ public class LifeBase : MonoBehaviour
             Debug.Log("morte");
         
         }
-        
+        flash.onFlash();
         
 
     }

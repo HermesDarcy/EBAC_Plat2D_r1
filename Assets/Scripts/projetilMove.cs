@@ -28,6 +28,7 @@ public class projetilMove : MonoBehaviour
         if(collision.gameObject.CompareTag("enemy"))
         {
             collision.gameObject.GetComponent<LifeBase>().Damage(1);
+            Destroy(this.gameObject);
         }
     }
 

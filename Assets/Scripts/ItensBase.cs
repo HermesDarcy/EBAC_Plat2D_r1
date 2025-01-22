@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Play.HD.Singleton;
 
-public class ItensBase : Singleton<ItensBase>
+public class ItensBase : MonoBehaviour
+
 {
-   
-   
+
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +23,7 @@ public class ItensBase : Singleton<ItensBase>
     {
 
         gameObject.SetActive(false);
+        onColleted();
     }
 
 

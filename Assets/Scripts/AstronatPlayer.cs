@@ -12,6 +12,7 @@ public class AstronatPlayer : MonoBehaviour
     public float friction, duration;
     public LifeBase lifeBase;
     public Animator animator;
+    
 
     [Header("GunFire")]
     public GameObject projetis;
@@ -73,14 +74,14 @@ public class AstronatPlayer : MonoBehaviour
         {
             rb.velocity = new Vector2(-speed * isRun, rb.velocityY);
             direction = -1;
-            transform.DOScaleX(-1,01f);
+            transform.DOScaleX(-1,0.1f);
             if(onFloor) animator.SetBool("run", true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocityX = speed * isRun;
             //transform.localScale = new Vector3(1, 1, 1);
-            transform.DOScaleX(1, 01f);
+            transform.DOScaleX(1, 0.1f);
             direction = 1;
             if(onFloor) animator.SetBool("run", true);
         }
@@ -116,6 +117,7 @@ public class AstronatPlayer : MonoBehaviour
         else if (collision.gameObject.CompareTag("enemy"))
         {
             lifeBase.Damage(1);
+            
         }
 
     }

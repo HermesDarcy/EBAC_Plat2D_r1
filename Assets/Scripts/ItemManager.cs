@@ -12,7 +12,7 @@ public class ItemManager : Singleton<ItemManager>
     // Start is called before the first frame update
     void Start()
     {
-        IsReset();
+        //IsReset();
     }
 
     private void IsReset()
