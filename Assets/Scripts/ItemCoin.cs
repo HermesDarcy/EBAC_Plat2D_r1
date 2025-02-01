@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class ItemCoin : ItensBase
 {
-    public int value;
+    public SO_coins coin;
+    [SerializeField]
+    private int value;
+
 
     protected override void onColleted()
     {
@@ -21,7 +24,7 @@ public class ItemCoin : ItensBase
     // Start is called before the first frame update
     void Start()
     {
-        value = 1;
+        value = coin.coin;
     }
 
 

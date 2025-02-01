@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed, dist;
+    //public float speed, dist;
     //private Rigidbody2D rb;
     public List<Transform> caminho;
     private int Px;
     public LifeBase lifeBase;
     private Animator animator;
     private bool isDeath = false;
+    public SO_enemy soEnemy;
 
 
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class EnemyMove : MonoBehaviour
 
 
         // Move para o ponto de patrulha atual
-        transform.position = Vector3.MoveTowards(transform.position, caminho[Px].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, caminho[Px].position, soEnemy.speed * Time.deltaTime);
         
         
         // Checa se chegou ao ponto de patrulha
@@ -79,7 +80,7 @@ public class EnemyMove : MonoBehaviour
 
     private void isLive()
     {
-        if(lifeBase.wLife() <=0 )
+        if( lifeBase.wLife() <=0 )
         {
             animator.SetBool("death", true);
             isDeath = true;

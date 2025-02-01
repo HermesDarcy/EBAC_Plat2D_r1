@@ -7,15 +7,17 @@ using UnityEngine;
 public class AstronatPlayer : MonoBehaviour
 {
     [Header("Player")]
-    public float speed;
+    /*public float speed;
     public float jump;
-    public float friction, duration;
+    public float friction, duration;*/
     public LifeBase lifeBase;
+    public SO_player isPlayer;
+    public SO_projectil projectil;
     public Animator animator;
     
 
     [Header("GunFire")]
-    public GameObject projetis;
+    //public GameObject projetis;
     public Transform gun;
 
     private bool onFloor;
@@ -42,11 +44,11 @@ public class AstronatPlayer : MonoBehaviour
 
         if (rb.velocityX > 0) // para frear caso use p physics material sem fricção
         {
-            rb.velocityX -= friction;
+            rb.velocityX -= isPlayer.friction;
         }
         else if (rb.velocityX < 0)
         {
-            rb.velocityX += friction;
+            rb.velocityX += isPlayer.friction;
         }
 
 
@@ -72,14 +74,14 @@ public class AstronatPlayer : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.velocity = new Vector2(-speed * isRun, rb.velocityY);
+            rb.velocity = new Vector2(-isPlayer.speed * isRun, rb.velocityY);
             direction = -1;
             transform.DOScaleX(-1,0.1f);
             if(onFloor) animator.SetBool("run", true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.velocityX = speed * isRun;
+            rb.velocityX = isPlayer.speed * isRun;
             //transform.localScale = new Vector3(1, 1, 1);
             transform.DOScaleX(1, 0.1f);
             direction = 1;
@@ -87,7 +89,7 @@ public class AstronatPlayer : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector2.up * jump;
+            rb.velocity = Vector2.up * isPlayer.jump;
             animator.SetTrigger("jump");
             
             onFloor = false;
@@ -96,7 +98,7 @@ public class AstronatPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            var temp = Instantiate(projetis);
+            var temp = Instantiate(projectil.projectil);
             temp.GetComponent<projetilMove>().startPos = gun;
             temp.GetComponent<projetilMove>().direction = direction;
 

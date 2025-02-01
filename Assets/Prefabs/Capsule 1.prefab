@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ebf2feea729c4ca9b7e86d0d71d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectil: {fileID: 11400000, guid: 1dfceb1bbaa50b848ad97184cd43affd, type: 2}
   startPos: {fileID: 0}
-  speed: 8
+  sprite: {fileID: 0}
   direction: 0
