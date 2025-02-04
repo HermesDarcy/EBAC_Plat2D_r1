@@ -20,6 +20,12 @@ public class AstronatPlayer : MonoBehaviour
     //public GameObject projetis;
     public Transform gun;
 
+    [Header("VFX")]
+    public ParticleSystem dust;
+    public ParticleSystem jetts;
+
+
+
     private bool onFloor;
     private int direction;
     private float isRun;
@@ -34,7 +40,7 @@ public class AstronatPlayer : MonoBehaviour
         //animator = GetComponent<Animator>();
         lifeBase = GetComponent<LifeBase>();
         direction = 1;
-
+        dust.Play();
     }
 
     // Update is called once per frame
@@ -91,7 +97,8 @@ public class AstronatPlayer : MonoBehaviour
         {
             rb.velocity = Vector2.up * isPlayer.jump;
             animator.SetTrigger("jump");
-            
+            jetts.Play();
+            dust.Stop();
             onFloor = false;
         }
         else animator.SetBool("run", false);
@@ -115,6 +122,8 @@ public class AstronatPlayer : MonoBehaviour
         {
             onFloor = true;
             animator.SetTrigger("landing");
+            dust.Play();
+            //jetts.Pause();
         }
         else if (collision.gameObject.CompareTag("enemy"))
         {

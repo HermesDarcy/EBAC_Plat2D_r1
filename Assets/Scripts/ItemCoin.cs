@@ -8,6 +8,7 @@ public class ItemCoin : ItensBase
     public SO_coins coin;
     [SerializeField]
     private int value;
+    
 
 
     protected override void onColleted()
@@ -31,6 +32,8 @@ public class ItemCoin : ItensBase
     private void OnDisable()
     {
         Debug.Log("desligado");
+        
+        
     }
 
 

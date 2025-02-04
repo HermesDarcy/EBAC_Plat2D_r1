@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+ /*
 public class Player : MonoBehaviour
 {
     public float speed,jump,friction, duration,isRun,jumpScaleX,jumpScaleY;
@@ -108,3 +108,4 @@ public class Player : MonoBehaviour
     }
 
 }
+  */

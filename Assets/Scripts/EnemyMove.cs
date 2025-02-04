@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
 {
     //public float speed, dist;
     //private Rigidbody2D rb;
+    public explodeMoedas expCoins;
     public List<Transform> caminho;
     private int Px;
     public LifeBase lifeBase;
@@ -82,6 +83,7 @@ public class EnemyMove : MonoBehaviour
     {
         if( lifeBase.wLife() <=0 )
         {
+            expCoins.explosionCoins();
             animator.SetBool("death", true);
             isDeath = true;
         }

@@ -6,7 +6,7 @@ using Play.HD.Singleton;
 public class ItensBase : MonoBehaviour
 
 {
-
+    public ParticleSystem fxCoin;
 
 
 
@@ -21,12 +21,19 @@ public class ItensBase : MonoBehaviour
 
     protected virtual void ColletedCoin()
     {
-
+        if (fxCoin != null) fxCoin.Play();
         gameObject.SetActive(false);
         onColleted();
     }
 
 
     protected virtual void onColleted()
-    { }
+    { 
+    
+    }
+
+
+
+
+
 }
