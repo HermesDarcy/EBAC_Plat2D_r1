@@ -135,5 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fxCoin: {fileID: 0}
+  audio: {fileID: 0}
   coin: {fileID: 11400000, guid: c89a79dae913cf04e8f12b6f168f7605, type: 2}
   value: 0

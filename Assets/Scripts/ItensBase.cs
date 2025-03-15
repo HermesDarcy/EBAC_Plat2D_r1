@@ -7,6 +7,16 @@ public class ItensBase : MonoBehaviour
 
 {
     public ParticleSystem fxCoin;
+    public AudioSource audio;
+    public Collider2D collider;
+
+
+    private void Start()
+    {
+        
+        audio.Stop();
+    }
+
 
 
 
@@ -15,6 +25,7 @@ public class ItensBase : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ColletedCoin();
+            if(collider != null) collider.enabled = false;
         }
     }
 
@@ -22,6 +33,12 @@ public class ItensBase : MonoBehaviour
     protected virtual void ColletedCoin()
     {
         if (fxCoin != null) fxCoin.Play();
+        if (audio != null)
+        {
+            audio.Play();
+           
+        }
+        
         gameObject.SetActive(false);
         onColleted();
     }
@@ -29,7 +46,8 @@ public class ItensBase : MonoBehaviour
 
     protected virtual void onColleted()
     { 
-    
+        
+            
     }
 
 

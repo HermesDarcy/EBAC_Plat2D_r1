@@ -8,10 +8,12 @@ public class StaticCoin : MonoBehaviour
     private Rigidbody2D rb;
     private float duration = 0.2f;
     public GameObject coin;
+    private Collider2D collider;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -29,6 +31,11 @@ public class StaticCoin : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             StartCoroutine(spinCoin());
         }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collider.enabled = false;
+        }
+
     }
 
 

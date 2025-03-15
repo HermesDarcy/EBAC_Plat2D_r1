@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
     private Animator animator;
     private bool isDeath = false;
     public SO_enemy soEnemy;
+    public GameObject audio;
 
 
     // Start is called before the first frame update
@@ -85,6 +86,7 @@ public class EnemyMove : MonoBehaviour
         {
             expCoins.explosionCoins();
             animator.SetBool("death", true);
+            audio.SetActive(true);
             isDeath = true;
         }
     }

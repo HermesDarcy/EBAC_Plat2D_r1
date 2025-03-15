@@ -7,17 +7,21 @@ public class projetilMove : MonoBehaviour
 {
     public SO_projectil projectil;
     public Transform startPos;
-    private SpriteRenderer sprite;
+    public AudioSource sfx;
     //public float speed;
     public int direction;
-    
+
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = projectil.color;
         transform.position = startPos.position;
+        sfx.Play();
         Destroy(gameObject, 5f);
+
     }
 
     // Update is called once per frame

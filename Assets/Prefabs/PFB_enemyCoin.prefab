@@ -69,8 +69,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.22
+  m_Offset: {x: -0.0139632225, y: 0}
+  m_Radius: 1.0608189
 --- !u!50 &7631527740321168883
 Rigidbody2D:
   serializedVersion: 4
@@ -159,6 +159,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2721441924222179086, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357805380335576437, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 5073448966701848118}
+    - target: {fileID: 4357805380335576437, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+      propertyPath: fxCoin
+      value: 
+      objectReference: {fileID: 1327318202741412911}
     - target: {fileID: 6333045136466891427, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
       propertyPath: m_Name
       value: PFB_1Coin
@@ -168,9 +180,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+--- !u!198 &1327318202741412911 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9067080719643356965, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+  m_PrefabInstance: {fileID: 8052200011442518794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4061217446528461225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6333045136466891427, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
+  m_PrefabInstance: {fileID: 8052200011442518794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5073448966701848118 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3015067364052659516, guid: 8dea87ec0508c4d438ddc827daddde08, type: 3}
   m_PrefabInstance: {fileID: 8052200011442518794}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8559934101502883159 stripped

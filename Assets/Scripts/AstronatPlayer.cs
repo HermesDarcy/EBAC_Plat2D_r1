@@ -24,7 +24,7 @@ public class AstronatPlayer : MonoBehaviour
     public ParticleSystem dust;
     public ParticleSystem jetts;
 
-
+    
 
     private bool onFloor;
     private int direction;
