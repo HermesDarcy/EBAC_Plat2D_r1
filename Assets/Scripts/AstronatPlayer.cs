@@ -24,7 +24,8 @@ public class AstronatPlayer : MonoBehaviour
     public ParticleSystem dust;
     public ParticleSystem jetts;
 
-    
+    [Header("SFX")]
+    public AudioSource audio;
 
     private bool onFloor;
     private int direction;
@@ -41,6 +42,7 @@ public class AstronatPlayer : MonoBehaviour
         lifeBase = GetComponent<LifeBase>();
         direction = 1;
         dust.Play();
+        
     }
 
     // Update is called once per frame
@@ -97,6 +99,7 @@ public class AstronatPlayer : MonoBehaviour
         {
             rb.velocity = Vector2.up * isPlayer.jump;
             animator.SetTrigger("jump");
+            audio.Play();
             jetts.Play();
             dust.Stop();
             onFloor = false;
